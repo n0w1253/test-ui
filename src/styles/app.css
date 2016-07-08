@@ -6,5 +6,17 @@
     padding: 0 0 15px;
 }
 
+.jumbotron{
+    height: 100vh; 
+    position: relative;
+    background: #000 url("../../img/cloud.jpg") center center;
+    width: 100%;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 

@@ -10,6 +10,7 @@
     "angular-ui-router": "^0.2.15",
     "bootstrap": "~3.3.6",
     "font-awesome": "~4.5.0",
-    "angular-multi-step-form": "~1.2.9"
+    "angular-multi-step-form": "~1.2.9",
+    "satellizer": "~0.14.1"
   }
 }
