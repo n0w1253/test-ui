@@ -3,7 +3,7 @@
  */
 
 angular.module('RDash')
-        .controller('SessionCtrl', ['$scope', SessionCtrl]);
+        .controller('TasksCtrl', ['$scope', SessionCtrl]);
 
 function SessionCtrl($scope) {
     $scope.model = {};

@@ -34,10 +34,10 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider', '$authPr
                     //        loginRequired: loginRequired
                     //    }
                 })
-                .state('master.session', {
-                    url: '/session',
-                    templateUrl: 'templates/session.html',
-                    controller: 'SessionCtrl'
+                .state('master.tasks', {
+                    url: '/tasks',
+                    templateUrl: 'templates/tasks.html',
+                    controller: 'TasksCtrl'
                 })
                 .state('master.dashboard', {
                     url: '/dashboard',
