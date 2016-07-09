@@ -225,7 +225,7 @@ app.post('/auth/github', function(req, res) {
             }
             user.github = profile.id;
             user.displayName = profile.login;            
-            user.picture = user.picture || profile.avatar_url;
+            user.picture = profile.avatar_url;
             //user.displayName = user.displayName || profile.name;
             user.save(function() {
               var token = createJWT(user);
