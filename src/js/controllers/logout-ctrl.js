@@ -1,5 +1,5 @@
 angular.module('RDash')
-        .controller('LogoutCtrl', ['$state', '$auth', 'toastr', '$rootScope',function ($state, $auth, toastr,$rootScope) {
+        .controller('LogoutCtrl', ['$state', '$auth', 'toastr', '$localStorage',function ($state, $auth, toastr,$localStorage) {
                 if (!$auth.isAuthenticated()) {
                     $state.go('login');
                 } else {
@@ -7,8 +7,8 @@ angular.module('RDash')
                     //        .then(function () {
                                 $auth.logout().then(function () {
                                     //  console.log("localstorage" + JSON.stringify($window.localStorage));
-                                    toastr.info('Bye, '+$rootScope.displayName+'!');
-                                    $rootScope.displayName = undefined;
+                                    toastr.info('Bye, '+$localStorage.get('displayName', '')+'!');
+                                    $localStorage.remove('displayName');
                                     $state.go('login');
                                 });
                     //        });
