@@ -1,14 +1,17 @@
 angular.module('RDash')
-        .controller('LogoutCtrl', ['$state', '$auth', 'toastr', '$window', function ($state, $auth, toastr, $window) {
+        .controller('LogoutCtrl', ['$state', '$auth', 'toastr', '$rootScope',function ($state, $auth, toastr,$rootScope) {
                 if (!$auth.isAuthenticated()) {
                     $state.go('login');
                 } else {
-                    $auth.logout()
-                            .then(function () {
-                                console.log("localstorage" + JSON.stringify($window.localStorage));
-                                toastr.info('You have been logged out');
-                                $state.go('login');
-                            });
+                    //$auth.unlink('github')
+                    //        .then(function () {
+                                $auth.logout().then(function () {
+                                    //  console.log("localstorage" + JSON.stringify($window.localStorage));
+                                    toastr.info('Bye, '+$rootScope.displayName+'!');
+                                    $rootScope.displayName = undefined;
+                                    $state.go('login');
+                                });
+                    //        });
                 }
             }]);
 

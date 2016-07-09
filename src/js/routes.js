@@ -8,7 +8,7 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider', '$authPr
 
 
         // For unmatched routes
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/master');
 
         // Application routes
         $stateProvider
@@ -97,7 +97,7 @@ angular.module('RDash').run(['$rootScope', '$state', '$auth', function ($rootSco
                         requiredLogin = true;
 
                     console.log("toState.data" + JSON.stringify(toState.data));
-                    console.log("t$auth.isAuthenticated()" + $auth.isAuthenticated());
+                    console.log("$auth.isAuthenticated()" + $auth.isAuthenticated());
                     // if yes and if this user is not logged in, redirect him to login page
                     if (requiredLogin && !$auth.isAuthenticated()) {
                         event.preventDefault();

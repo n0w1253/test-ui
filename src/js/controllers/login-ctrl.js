@@ -1,10 +1,12 @@
 angular.module('RDash')
-        .controller('LoginCtrl', ['$scope', '$auth', '$state', 'toastr',function ($scope, $auth, $state, toastr) {
+        .controller('LoginCtrl', ['$scope', '$auth', '$state', 'toastr','$rootScope',function ($scope, $auth, $state, toastr,$rootScope) {
             
             $scope.authenticate = function (provider) {
                 $auth.authenticate(provider)
-                        .then(function () {
-                            toastr.success('You have successfully signed in with ' + provider + '!');
+                        .then(function (res) {
+                            console.log("res from authen "+JSON.stringify(res.data));
+                    $rootScope.displayName = res.data.displayName;
+                            toastr.success('Hello, '+res.data.displayName+'!');
                            // $location.path('#/master');
                             $state.go('master');
                         })

@@ -284,14 +284,14 @@ app.post('/auth/github', function(req, res) {
 
     // Step 2. Retrieve profile information about the current user.
     request.get({ url: userApiUrl, qs: accessToken, headers: headers, json: true }, function(err, response, profile) {
-
+        console.log("profile"+JSON.stringify(profile));
       // Step 3a. Link user accounts.
       if (req.header('Authorization')) {
         User.findOne({ github: profile.id }, function(err, existingUser) {
           if (existingUser) {
             //return res.status(409).send({ message: 'There is already a GitHub account that belongs to you' });
             var token = createJWT(existingUser);
-            return res.send({ token: token });
+            return res.send({ token: token,displayName:existingUser.displayName });
           }
           var token = req.header('Authorization').split(' ')[1];
           var payload = jwt.decode(token, config.TOKEN_SECRET);
@@ -301,11 +301,12 @@ app.post('/auth/github', function(req, res) {
               user = new User();
             }
             user.github = profile.id;
+            user.displayName = profile.login;            
             user.picture = user.picture || profile.avatar_url;
-            user.displayName = user.displayName || profile.name;
+            //user.displayName = user.displayName || profile.name;
             user.save(function() {
               var token = createJWT(user);
-              res.send({ token: token });
+              res.send({ token: token, displayName:user.displayName });
             });
           });
         });
@@ -314,15 +315,16 @@ app.post('/auth/github', function(req, res) {
         User.findOne({ github: profile.id }, function(err, existingUser) {
           if (existingUser) {
             var token = createJWT(existingUser);
-            return res.send({ token: token });
+            return res.send({ token: token, displayName:existingUser.displayName });
           }
           var user = new User();
           user.github = profile.id;
           user.picture = profile.avatar_url;
-          user.displayName = profile.name;
+          //user.displayName = profile.name;
+          user.displayName = profile.login; 
           user.save(function() {
             var token = createJWT(user);
-            res.send({ token: token });
+            res.send({ token: token,displayName:user.displayName });
           });
         });
       }
