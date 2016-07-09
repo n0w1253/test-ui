@@ -3,8 +3,8 @@
 /**
  * Route configuration for the RDash module.
  */
-angular.module('RDash').config(['$stateProvider', '$urlRouterProvider', '$authProvider',
-    function ($stateProvider, $urlRouterProvider, $authProvider) {
+angular.module('RDash').config(['$stateProvider', '$urlRouterProvider', '$authProvider', 'toastrConfig',
+    function ($stateProvider, $urlRouterProvider, $authProvider, toastrConfig) {
 
 
         // For unmatched routes
@@ -82,6 +82,14 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider', '$authPr
             }
             return deferred.promise;
         }
+
+
+        angular.extend(toastrConfig, {
+            closeButton: true,
+            extendedTimeOut: 500,
+            timeOut: 1000
+        });
+
     }
 
 ]);
