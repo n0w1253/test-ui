@@ -214,7 +214,7 @@ app.post('/auth/github', function(req, res) {
           if (existingUser) {
             //return res.status(409).send({ message: 'There is already a GitHub account that belongs to you' });
             var token = createJWT(existingUser);
-            return res.send({ token: token,displayName:existingUser.displayName });
+            return res.send({ token: token,displayName:existingUser.displayName,picture:existingUser.picture });
           }
           var token = req.header('Authorization').split(' ')[1];
           var payload = jwt.decode(token, config.TOKEN_SECRET);
@@ -229,7 +229,7 @@ app.post('/auth/github', function(req, res) {
             //user.displayName = user.displayName || profile.name;
             user.save(function() {
               var token = createJWT(user);
-              res.send({ token: token, displayName:user.displayName });
+              res.send({ token: token, displayName:user.displayName, picture:user.picture });
             });
           });
         });
@@ -238,7 +238,7 @@ app.post('/auth/github', function(req, res) {
         User.findOne({ github: profile.id }, function(err, existingUser) {
           if (existingUser) {
             var token = createJWT(existingUser);
-            return res.send({ token: token, displayName:existingUser.displayName });
+            return res.send({ token: token, displayName:existingUser.displayName,picture:existingUser.picture });
           }
           var user = new User();
           user.github = profile.id;
@@ -247,7 +247,7 @@ app.post('/auth/github', function(req, res) {
           user.displayName = profile.login; 
           user.save(function() {
             var token = createJWT(user);
-            res.send({ token: token,displayName:user.displayName });
+            res.send({ token: token,displayName:user.displayName,picture:user.picture });
           });
         });
       }

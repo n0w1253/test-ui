@@ -9,6 +9,7 @@ angular.module('RDash')
                                     //  console.log("localstorage" + JSON.stringify($window.localStorage));
                                     toastr.info('Bye, '+$localStorage.get('displayName', '')+'!');
                                     $localStorage.remove('displayName');
+                                    $localStorage.remove('picture');
                                     $state.go('login');
                                 });
                     //        });

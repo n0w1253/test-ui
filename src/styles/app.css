@@ -19,9 +19,9 @@
 }
 
 .row.header {
-  height: 60px;
-  background: #f3f3f3;
-  margin-bottom: 15px;
+    height: 60px;
+    background: #f3f3f3;
+    margin-bottom: 15px;
 }
 
 .page-content{
@@ -29,41 +29,95 @@
 }
 
 body {
-  background: #fff;
-  
+    background: #fff;
+
 }
 
 #sidebar-wrapper {
 
-  width: 230px;
+    width: 230px;
 
 }
 
 ul.sidebar li a {
 
-  width: 230px;
+    width: 230px;
 }
 
 @media only screen and (min-width: 561px) {
-  #page-wrapper.open {
-    padding-left: 230px;
-  }
+    #page-wrapper.open {
+        padding-left: 230px;
+    }
 }
 
 @media only screen and (max-width: 560px) {
-  #page-wrapper.open {
-    padding-left: 50px;
-  }
+    #page-wrapper.open {
+        padding-left: 50px;
+    }
 }
 #page-wrapper {
-  padding-left: 50px;
-  
+    padding-left: 50px;
+
 }
 
 ul.sidebar .sidebar-list .menu-icon {
-  width: 60px;
+    width: 60px;
 }
 
 ul.sidebar .sidebar-main .menu-icon {
-  padding-right: 20px;
+    padding-right: 20px;
+}
+
+.sliding-steps main,
+.sliding-steps main .well {
+    min-height: 900px;
+    margin: 0;
+
+}
+.widget {
+    border-color: #fff; 
+}
+.widget .widget-body {
+    padding: 0px;
+}
+.sliding-steps main {
+    position: relative;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.sliding-steps main .well {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sliding-steps .form-step.ng-enter, .sliding-steps .form-step.ng-leave {
+    -webkit-transition: transform .5s ease-in-out;
+    transition: transform .5s ease-in-out;
+}
+.sliding-steps .step-forward .form-step.ng-enter {
+    transform: translateX(100%);
+}
+.sliding-steps .step-forward .form-step.ng-enter.ng-enter-active {
+    transform: translateX(0);
+}
+.sliding-steps .step-forward .form-step.ng-leave {
+    /*transform: translateX(100%);*/
+}
+.sliding-steps .step-forward .form-step.ng-leave.ng-leave-active {
+    transform: translateX(-100%);
+}
+
+.sliding-steps .step-backward .form-step.ng-enter {
+    transform: translateX(-100%);
+}
+.sliding-steps .step-backward .form-step.ng-enter.ng-enter-active {
+    transform: translateX(0);
+}
+.sliding-steps .step-backward .form-step.ng-leave {
+    /*transform: translateX(100%);*/
+}
+.sliding-steps .step-backward .form-step.ng-leave.ng-leave-active {
+    transform: translateX(100%);
 }

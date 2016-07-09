@@ -6,6 +6,7 @@ angular.module('RDash')
                         .then(function (res) {
                             console.log("res from authen "+JSON.stringify(res.data));
                     $localStorage.store('displayName', res.data.displayName);
+                    $localStorage.store('picture',res.data.picture);
                             toastr.success('Hello, '+res.data.displayName+'!');
                            // $location.path('#/master');
                             $state.go('master');

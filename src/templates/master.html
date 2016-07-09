@@ -45,15 +45,16 @@
                     <div class="user pull-right">
                         <div class="item dropdown" uib-dropdown>
                             <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
-                                <img src="img/avatar.jpg">
+                                <img src="{{picture}}">
+                                
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li class="dropdown-header">
-                                    {{displayName}}
+                                    Signed in as <strong>{{displayName}}<strong>
                                 </li>                  
                                 <li class="divider"></li>
                                 <li class="link">
-                                    <a ui-sref="logout">
+                                    <a ui-sref="logout" class="text-center">
                                         Quit
                                     </a>
                                 </li>

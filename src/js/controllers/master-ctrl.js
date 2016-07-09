@@ -10,6 +10,7 @@ angular.module('RDash')
     var mobileView = 992;
     
     $scope.displayName = $localStorage.get('displayName','error');
+    $scope.picture = $localStorage.get('picture','img/avatar.jpg');
 
     $scope.getWidth = function() {
         return window.innerWidth;
