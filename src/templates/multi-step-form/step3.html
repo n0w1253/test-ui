@@ -1,42 +1,73 @@
 <div class="form-step">
     <div class="well">
-       <input type="text" ng-model="model.lastName" name="lastName" class="form-control" placeholder="Enter your last name">
-       <br><br>
-       <form class="form-horizontal" name="commentForm"
-                      ng-submit="submitComment()" novalidate>
-                    <div class="form-group" ng-class="{ 'has-error' : commentForm.author.$error.required && !commentForm.author.$pristine }">
-                        <label for="author" class="col-sm-2 control-label">Your Name</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="author" name="author" placeholder="Enter Your Name"
-                                   ng-model="mycomment.author" required>
-                            <span ng-show="commentForm.author.$error.required && !commentForm.author.$pristine" class="help-block">Your name is required.</span>
-                        </div>
+        <input type="text" ng-model="model.lastName" name="lastName" class="form-control" placeholder="Enter your last name">
+        <br><br>
+        <uib-tabset active="active">
+            <uib-tab index="0" heading="Static title">Static content</uib-tab>
+            <uib-tab index="$index + 1" ng-repeat="tab in model.tabs" heading="{{tab.title}}" disable="tab.disabled">
+                {{tab.content}}
+            </uib-tab>
+            <uib-tab index="3" select="alertMe()">
+                <uib-tab-heading>
+                    <i class="glyphicon glyphicon-bell"></i> Alert!
+                </uib-tab-heading>
+                I've got an HTML heading, and a select callback. Pretty cool!
+            </uib-tab>
+        </uib-tabset>
+        <!--uib-tabset>
+            <tab ng-repeat="workspace in workspaces"
+                 heading="{{workspace.name}}"
+                 active=workspace.active>
+                <div ng-controller="TabsChildController" 
+                     ng-init="workspace = workspace">
+                    <div>
+                        {{workspace.id}} : {{ workspace.name}}
                     </div>
+                    <input type="text" ng-model="workspace.name"/>
+                </div>     
+            </tab>
+            <tab select="addWorkspace()">
+                <tab-heading>
+                    <i class="icon-plus-sign"></i>
+                </tab-heading>
+            </tab>
+        </uib-tabset-->
 
-                    <div class="form-group">
-                        <label for="optradio" class="col-sm-2 control-label">Number of Stars</label>                        
-                        <div class="col-sm-10">
-                            <label class="radio-inline" ng-repeat="r in [1, 2, 3, 4, 5]"><input type="radio"  name="optradio" ng-value="{{r}}" ng-model="mycomment.rating">{{r}}</label>
-                        </div>
-                    </div>
+        <form class="form-horizontal" name="commentForm"
+              ng-submit="submitComment()" novalidate>
+            <div class="form-group" ng-class="{ 'has-error' : commentForm.author.$error.required && !commentForm.author.$pristine }">
+                <label for="author" class="col-sm-2 control-label">Your Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="author" name="author" placeholder="Enter Your Name"
+                           ng-model="mycomment.author" required>
+                    <span ng-show="commentForm.author.$error.required && !commentForm.author.$pristine" class="help-block">Your name is required.</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="optradio" class="col-sm-2 control-label">Number of Stars</label>                        
+                <div class="col-sm-10">
+                    <label class="radio-inline" ng-repeat="r in [1, 2, 3, 4, 5]"><input type="radio"  name="optradio" ng-value="{{r}}" ng-model="mycomment.rating">{{r}}</label>
+                </div>
+            </div>
 
 
-                    <div class="form-group" ng-class="{ 'has-error' : commentForm.comment.$error.required && !commentForm.comment.$pristine }">
-                        <label for="comment" class="col-sm-2 control-label">Your Comments</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="comment" name="comment" rows="12"
-                                      ng-model="mycomment.comment" required>
-                            </textarea>
-                            <span ng-show="commentForm.comment.$error.required && !commentForm.comment.$pristine" class="help-block">Your comments are required.</span>
-                        </div>
-                    </div> 
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary" ng-disabled="commentForm.$invalid">Submit Comment</button>
-                        </div>
-                    </div>
+            <div class="form-group" ng-class="{ 'has-error' : commentForm.comment.$error.required && !commentForm.comment.$pristine }">
+                <label for="comment" class="col-sm-2 control-label">Your Comments</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="comment" name="comment" rows="12"
+                              ng-model="mycomment.comment" required>
+                    </textarea>
+                    <span ng-show="commentForm.comment.$error.required && !commentForm.comment.$pristine" class="help-block">Your comments are required.</span>
+                </div>
+            </div> 
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary" ng-disabled="commentForm.$invalid">Submit Comment</button>
+                </div>
+            </div>
 
-                </form>
+        </form>
 
     </div>
 </div>

@@ -1,0 +1,17 @@
+/**
+ * Widget Header Directive
+ */
+
+angular
+        .module('RDash')
+.directive('rdWidgetPlainHeader',
+        function rdWidgetTitle() {
+            var directive = {
+                requires: '^rdWidget',
+                transclude: true,
+                template: '<div class="widget-header"><div class="row"><div class="pull-left col-xs-6 col-sm-4" ng-transclude></div></div></div>',
+                restrict: 'E'
+            };
+            return directive;
+        }
+);

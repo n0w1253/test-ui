@@ -46,6 +46,14 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider', '$authPr
                 .state('master.tables', {
                     url: '/tables',
                     templateUrl: 'templates/tables.html'
+                })
+                .state('master.about', {
+                    url: '/about',
+                    templateUrl: 'templates/about.html'
+                })
+                .state('master.contact', {
+                    url: '/contact',
+                    templateUrl: 'templates/contact.html'
                 });
 
         $authProvider.github({
