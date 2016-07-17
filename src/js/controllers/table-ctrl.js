@@ -4,13 +4,13 @@ angular.module('RDash')
                 // Chart.js Data
                 Chart.defaults.global.animation.duration = 0;
                 var originalData = [65, 59, 80, 81, 56, 55, 40, 8, 9, 10];
-                var originalBigData = new Array(10000)
+                var originalBigData = new Array(20000)
                         .join().split(',')
                         .map(function (item, index) {
                             return (Math.random() * (5.120 - 3.0200) + 3.0200).toFixed(4);
                         });
                 var originalDataLabel = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-                var originalBigDataLabel = new Array(10000)
+                var originalBigDataLabel = new Array(20000)
                         .join().split(',')
                         .map(function (item, index) {
                             return ++index;
@@ -186,11 +186,11 @@ angular.module('RDash')
                     }};
                 $scope.bigdataslider = {
                     minValue: 1,
-                    maxValue: 10000,
+                    maxValue: 20000,
                     options: {
                         id: 'slider-id1',
                         floor: 1,
-                        ceil: 10000,
+                        ceil: 20000,
                         step: 10,
                         noSwitching: true,
                         onChange: function (id) {
