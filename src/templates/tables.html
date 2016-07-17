@@ -6,14 +6,15 @@
             </rd-widget-header>
             <rd-widget-body classes="xlarge no-padding">
                 <div>
-                    <canvas tc-chartjs-line chart-options="options" chart-data="data">
+                    <!--canvas tc-chartjs-line chart-options="options" chart-data="data">
                         
                     </canvas> 
                         <rzslider
     rz-slider-model="slider.minValue"
     rz-slider-high="slider.maxValue"
-    rz-slider-options="slider.options"></rzslider>
-               
+    rz-slider-options="slider.options"></rzslider-->
+                <zingchart id="myChart0" zc-json="myJson0" zc-width="100%" zc-height=400></zingchart>
+
                 </div>  
             
             </rd-widget-body>
@@ -31,13 +32,14 @@
             <rd-widget-body classes="xlarge no-padding">
                 <div>
                     <div>
-                    <canvas tc-chartjs-line chart-options="bigdataoptions" chart-data="bigdata">
+                    <!--canvas tc-chartjs-line chart-options="bigdataoptions" chart-data="bigdata">
                         
                     </canvas> 
                         <rzslider
     rz-slider-model="bigdataslider.minValue"
     rz-slider-high="bigdataslider.maxValue"
-    rz-slider-options="bigdataslider.options"></rzslider>
+    rz-slider-options="bigdataslider.options"></rzslider-->
+                    <zingchart id="myChart" zc-json="myJson" zc-width="100%" zc-height=400></zingchart>
                
                 </div>  
                 </div>
