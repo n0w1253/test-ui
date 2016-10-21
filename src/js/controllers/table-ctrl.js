@@ -8,9 +8,10 @@ angular.module('RDash')
                         .map(function (item, index) {
                             return (Math.random() * (5.120 - 3.0200) + 3.0200).toFixed(4);
                         });
+                originalBigData[30000] = 20.0;
 
-                
-                
+
+
                 var result0 = originalData.map(function (x) {
                     return parseFloat(x, 10);
                 });
@@ -44,14 +45,23 @@ angular.module('RDash')
                             "font-size": 10
                         }
                     },
+                    "legend": {
+                        "layout": "1x1", //row x column
+                        "x": "20%",
+                        "y": "8%"
+                    },
+                    "plotarea": {
+                        "margin-bottom": "5%",
+                        "margin-top": "20%"
+                    },
                     "plot": {
                         "line-width": 1,
-                        "line-color": "#3399ff",
+                        "line-color": "#ff9933",
                         "marker": {
                             "size": 3,
                             "background-color": "#ccccff #00ff00",
                             "border-width": 1,
-                            "border-color": "#3399ff"
+                            "border-color": "#ff9933"
                         },
                         "tooltip": {
                             "visible": false
@@ -73,16 +83,17 @@ angular.module('RDash')
                     },
                     "series": [
                         {
-                            "values": result0
+                            "values": result0,
+                            "legend-text": "accuracy"
                         }
                     ]
                 };
 
 
-                
-                
-                
-                
+
+
+
+
 
                 var result = originalBigData.map(function (x) {
                     return parseFloat(x);
@@ -117,6 +128,15 @@ angular.module('RDash')
                             "font-size": 10
                         }
                     },
+                    "legend": {
+                        "layout": "1x1", //row x column
+                        "x": "20%",
+                        "y": "8%"
+                    },
+                    "plotarea": {
+                        "margin-bottom": "5%",
+                        "margin-top": "20%"
+                    },
                     "plot": {
                         "line-width": 1,
                         "line-color": "#3399ff",
@@ -146,7 +166,8 @@ angular.module('RDash')
                     },
                     "series": [
                         {
-                            "values": result
+                            "values": result,
+                            "legend-text": "LNoise" 
                         }
                     ]
                 };

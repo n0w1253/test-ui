@@ -47,6 +47,10 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider', '$authPr
                     url: '/tables',
                     templateUrl: 'templates/tables.html'
                 })
+                .state('master.images', {
+                    url: '/images',
+                    templateUrl: 'templates/images.html'
+                })
                 .state('master.about', {
                     url: '/about',
                     templateUrl: 'templates/about.html'

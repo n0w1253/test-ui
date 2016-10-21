@@ -3,46 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/nancy/GitHub/test-ui/src/templates/login.html</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/module.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/bower.json</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/templates/multi-step-form/step3.html</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/controllers/login-ctrl.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/directives/widget-plain-header.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/img/avatar.jpg</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/controllers/logout-ctrl.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/controllers/alert-ctrl.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/.gitattributes</file>
             <file>file:/Users/nancy/GitHub/test-ui/src/js/controllers/table-ctrl.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/README.md</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/templates/multi-step-form/step4.html</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/templates/about.html</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/templates/dashboard.html</file>
+            <file>file:/Users/nancy/GitHub/test-ui/src/js/module.js</file>
             <file>file:/Users/nancy/GitHub/test-ui/src/index.html</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/templates/contact.html</file>
-            <file>file:/Users/nancy/GitHub/test-ui/.bowerrc</file>
             <file>file:/Users/nancy/GitHub/test-ui/src/templates/tables.html</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/styles/app.css</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/directives/widget-header.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/templates/multi-step-form/step1.html</file>
-            <file>file:/Users/nancy/GitHub/test-ui/gulpfile.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/directives/loading.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/templates/multi-step-form/step2.html</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/controllers/isolated-step-ctrl.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/templates/master.html</file>
-            <file>file:/Users/nancy/GitHub/test-ui/package.json</file>
-            <file>file:/Users/nancy/GitHub/test-ui/server.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/services/local-storage.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/.gitignore</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/controllers/master-ctrl.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/templates/tasks.html</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/directives/widget.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/controllers/tasks-ctrl.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/directives/widget-body.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/npm-debug.log</file>
-            <file>file:/Users/nancy/GitHub/test-ui/config.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/directives/widget-footer.js</file>
-            <file>file:/Users/nancy/GitHub/test-ui/src/js/routes.js</file>
         </group>
     </open-files>
 </project-private>
